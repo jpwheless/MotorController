@@ -1,0 +1,116 @@
+
+
+-- Motor Control Checklist --
+
+MOSFETs oriented correctly?
+- Yes.
+
+Sensor cable has pull-up resistors?
+-Yes, 10k Ohm to 5v.
+
+Way to turn off controller? Use switch to ground the shutdown pin on the switching regulator.  Zener!
+- Yes.
+
+Voltage sensor for batteries?
+- Yes.  Uses Zener to drop ADC voltage to low end of battery voltage, then divider to shrink voltage range to ADC range
+
+Voltage dividers for sensors that need them?
+- The current transducers are the only ones that need them, and they have them.
+
+Circuit protection devices in necessary places?
+- One 77.8v TVS across the battery connections, and one 20v TVS on the control board power inputs.
+
+Inter-board connection pins line up properly?
+- Yes!
+
+Unused pins on Teensy routed to external connections?
+- The Teensy will be connected with stackable headers.  The unused pins can be accessed this way.
+
+Inter-board header length is enough to provide clearance between components?
+-  Yes.  Components are fairly flat.
+
+Voltage regulators for control board able to handle planned voltage?
+- Planned voltage is 14-20v.  The control board's regulators are rated to that.  Above that, will need external reg.
+
+Separate ground planes are connected at one point?
+- Yes, on control board.  No ground plane on bridge.
+
+High-current/high-frequency loops are made as small as possible?
+- Yes.  Switching regulator is fairly small.  Gate drivers  traces are as short as they can be.
+
+Function indicator LEDs are placed on control board?
+- Yes.  Red and green led for each of the half-bridge drivers, then an independent RGB led.
+
+MOSFET drivers are connected to PWM outputs on Teensy?
+- Yes.
+
+Motor sensor phases are connected to interrupt-capable digital pins?
+- Yes.  All digital pins are interrupt-capable.
+
+Analog sensors are connected to analog pins on Teensy?
+- Yes.
+
+Motor thermistor has voltage divider set up properly?
+- Yes.  R1 is a 2k Ohm resistor, which biases the circuit towards high-temp measurements.
+
+Current transducers have all connections and capacitors?
+- Yes.
+
+SMD thermometer on bridge has all connections and capacitors?
+- Yes.
+
+Control board has reverse-current preventer to allow only Teensy to be USB powered?
+- The 5v linear regulator has reverse flow prevention
+
+All SMD components have silkscreen markings?
+- Yes, on control and bridge.
+
+All boards have name/date on them?
+- Yes.
+
+Pin connections are labelled if possible?
+- Yes.
+
+Teensy pins have a maximum of 9mA current draw?
+- Yes.  MOSFET drivers are logic-level, and LEDs have resistors to limit max current to 2.5mA.
+- Also, the 3.3v reg output is connected to only the motor thermistor, and draws <1mA.
+
+Sensor cable pinout is correct?
+- Yes.  Physically checked thermistor - 13k ohm at 22.9*C.
+
+Decoupling capacitors on everything?
+- Yes.  Capacitors across the supplies of all sensors.
+
+Teensy is able to sense 5v supply voltage to apply correction to analog sensor readings?
+- Yes.  Has voltage divider that cuts voltage in half.
+
+Pin 33 is not connected to anything? (EZ Port pin, should not be used)
+- True.
+
+Switching regulator is connected properly?
+- Yes.
+
+Switching regulator is outputting correct voltage for linear regulator? (Allow for 500mV drop)
+- Yes.  Voltage divider for feedback is set for output=5.5v.
+
+Linear regulator is connected properly?
+-
+
+Regulators have all required components?
+-
+
+MOSFET drivers are connected to the proper hi and lo gates?
+-
+
+MOSFET drivers have appropriate power and ground connections?
+-
+
+All sensors have appropriate power and ground connections?
+-
+
+AGND is connected to a low-noise area?
+-
+
+All components ordering pages have been places in the bookmark folders?
+-
+
