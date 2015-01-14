@@ -30,7 +30,7 @@ Inter-board header length is enough to provide clearance between components?
 -  Yes.  Components are fairly flat.
 
 Voltage regulators for control board able to handle planned voltage?
-- Planned voltage is 14-20v.  The control board's regulators are rated to that.  Above that, will need external reg.
+- Planned voltage is 12-17v.  The control board's regulators are rated to that.  Above that, will need external reg.
 
 Separate ground planes are connected at one point?
 - Yes, on control board.  No ground plane on bridge.
